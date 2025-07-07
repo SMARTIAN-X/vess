@@ -15,6 +15,7 @@
     line-height: 1.7;
     padding-top: 90px;
     text-align: center;
+    overflow-x: hidden;
   }
   
   /* HEADER */
@@ -75,8 +76,11 @@
     margin-top: 1rem;
   }
   .nav.open {
-    max-height: 400px;
+    display: flex;
+    max-height: 500px;       /* 🆙 Increase if you have more links */
+    overflow-y: auto;        /* ✅ Add scroll if needed */
   }
+  
   .nav a {
     color: #333;
     text-decoration: none;
@@ -151,31 +155,41 @@
   }
   
   /* GALLERY */
-  .gallery .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  
+  
+  .custom-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    margin-top: 2rem;
+  }
+  
+  .custom-gallery .row {
+    display: flex;
     gap: 1rem;
-    justify-content: center;     /* ✅ center the entire grid */
-    align-items: center;         /* optional: vertically center inside the section */
-    margin: 1.5rem auto;
-    max-width: 900px;            /* ✅ optional: limits grid to center width */
   }
   
-  .grid img {
-    width: 90%; /* 🔽 Reduce from 100% */
-    max-width: 220px; /* ✅ Optional: limit max size */
-    border-radius: 14px;
-    box-shadow: 0 4px 10px rgba(127, 0, 255, 0.1);
+  .custom-gallery .row.two {
+    justify-content: center;
+  }
+  
+  .custom-gallery .row.one {
+    justify-content: center;
+  }
+  
+  .custom-gallery img {
+    width: 140px;
+    height: auto;
+    border-radius: 12px;
     transition: transform 0.3s ease;
-    margin: 0 auto;
-    display: block;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   }
   
-  
-  .grid img:hover {
-    transform: scale(1.07);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); /* ✅ adds glow on hover */
+  .custom-gallery img:hover {
+    transform: scale(1.05);
   }
+  
   
   
   /* COUNTDOWN */
@@ -357,16 +371,28 @@
     .nav {
       display: flex !important;
       flex-direction: row;
-      gap: 1.2rem;
       max-height: none;
+      overflow: visible;
       margin-top: 0;
+      gap: 1.5rem;
     }
   
     .menu-btn {
-      display: none; /* hide hamburger button on desktop */
+      display: none;
     }
   }
-
+  
+  @media (max-width: 600px) {
+    .custom-gallery .row.two {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .custom-gallery img {
+      width: 80%;
+    }
+  }
+  
   .brown-text {
     color: #5c3a1a !important;
   }
