@@ -3,12 +3,14 @@ function toggleMenu() {
     const nav = document.getElementById("nav");
     nav.classList.toggle("open");
   
+    // Optional: close nav when link is clicked
     nav.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
         nav.classList.remove("open");
       });
     });
   }
+  
   
   // COUNTDOWN TIMER
   const eventDate = new Date("2025-12-23T09:00:00").getTime();
