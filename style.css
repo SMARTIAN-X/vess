@@ -40,43 +40,44 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
     background: #fff;
+    z-index: 1000;
+    height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 1rem;
-    z-index: 1000;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    flex-wrap: nowrap; /* prevent wrap issues */
+    overflow: hidden;  /* prevent overflow */
   }
   
   .blog-logo {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    color: #5c3a1a;
+    white-space: nowrap; /* keeps text in line */
   }
   
   .blog-logo-img {
-    height: 34px;
+    height: 42px;
     width: auto;
     object-fit: contain;
     border-radius: 6px;
   }
   
-  /* === MENU BUTTON === */
   .blog-menu-btn {
     font-size: 1.5rem;
     background: none;
     border: none;
     color: #000;
     cursor: pointer;
-    display: block;
+    z-index: 1001;
   }
   
-  /* === NAV MENU === */
+  /* Mobile nav dropdown (hidden by default) */
   .blog-nav {
     display: none;
     flex-direction: column;
@@ -86,36 +87,33 @@
     right: 0;
     background: #fff;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     padding: 1rem 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
     gap: 1rem;
-  }
-  
-  .blog-nav a {
-    color: #000;
-    text-decoration: none;
-    font-size: 1rem;
+    z-index: 999;
   }
   
   .blog-nav.open {
     display: flex;
   }
   
-  /* === DESKTOP NAV === */
+  /* Desktop view */
   @media (min-width: 768px) {
     .blog-menu-btn {
       display: none;
     }
   
     .blog-nav {
-      position: static;
       display: flex !important;
       flex-direction: row;
-      gap: 1.5rem;
+      position: static;
       background: none;
       box-shadow: none;
+      gap: 1.5rem;
       padding: 0;
     }
+  
+  
   
     .blog-nav a {
       font-size: 1rem;
@@ -241,6 +239,12 @@
       width: 80%;
     }
   }
+  @media (min-width: 768px) {
+    .custom-gallery img {
+      width: 180px;
+      max-width: 100%;
+    }
+  }
   
   
   
@@ -268,22 +272,29 @@
   
   /* IMAGE STRIP */
   .image-strip {
-    overflow-x: hidden;
+    overflow: hidden;
+    width: 100%;
     background: #f4f7ff;
   }
+  
   .strip-track {
     display: flex;
-    animation: scroll 3s linear infinite;
+    width: max-content;
     gap: 1rem;
+    animation: scroll 10s linear infinite;
   }
-  .strip-track img {
-    width: 280px;
-    border-radius: 12px;
-  }
+  
   @keyframes scroll {
     0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    100% { transform: translateX(-50%); } /* enough to scroll halfway */
   }
+  
+  .strip-track img {
+    width: 280px;
+    flex-shrink: 0;
+    border-radius: 12px;
+  }
+  
   
   /* CONTACT FORM */
   .reminder form {
