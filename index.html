@@ -10,37 +10,38 @@
 
   <!-- 🔝 Header -->
   <header class="header">
-    <div class="logo">God's Vessels</div>
+    <div class="logo brown-text">
+        <img src="images/logo.JPG" alt="Logo" class="logo-img" />
+        God's Vessels
+      </div>      
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
     <nav class="nav" id="nav">
       <a href="#home">Home</a>
-      <a href="#verse">Verse</a>
       <a href="#mission">Mission</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#countdown">Event</a>
+    <!--  <a href="#countdown">Event</a> -->
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <!-- 🌟 Hero Section -->
   <section class="hero fade-in" id="home">
-    <h1 class="glow-text">Welcome to God's Vessels</h1>
+    <h1 class="glow-text brown-text">Welcome to God's Vessels</h1>
     <p>We are a passionate movement of young believers dedicated to living as vessels of honor in the hands of God. At God’s Vessels, we believe that every life has a divine purpose — to shine, serve, and stand out for the Kingdom.</p>
     <p>Through worship, discipleship, evangelism, and community, we ignite destinies and raise leaders that transform nations.</p>
   </section>
 
   <!-- 📖 Rotating Verse -->
   <section class="verse-section fade-in" id="verse">
-    <h2>Daily Scripture Inspiration</h2>
+    <h2 class="brown-text">Daily Scripture Inspiration</h2>
     <p id="verse">Loading verse...</p>
   </section>
 
   <!-- 🙌 Mission & Vision -->
   <section class="about fade-in" id="mission">
-    <h2>Our Mission</h2>
+    <h2 class="brown-text">Our Mission</h2>
     <p>To equip and empower a generation of Spirit-filled young people who are passionate about God, anchored in truth, and ready to impact their world for Christ. We exist to nurture disciples who carry the fire of revival, walk in purpose, and bring light into dark places.</p>
 
-    <h2>Our Vision</h2>
+    <h2 class="brown-text">Our Vision</h2>
     <p>To be a global movement of kingdom-minded youths who are set apart, refined like gold, and used as instruments of transformation in the church, the community, and the nations of the world.</p>
 
     <p>Through dynamic programs, small groups, leadership trainings, worship nights, and community outreaches, we help young people discover who they are in Christ and walk boldly in their calling.</p>
@@ -48,22 +49,20 @@
 
   <!-- 🖼️ Image Gallery Grid -->
   <section class="gallery fade-in" id="gallery">
-    <h2>Highlights from Our Gatherings</h2>
+    <h2 class="brown-text">Highlights from Our Gatherings</h2>
     <p>Our journey is filled with passionate worship, deep prayer, authentic fellowship, and unforgettable encounters. Take a look at some of the powerful moments we've shared together.</p>
     <div class="grid">
-      <img src="images/pic1.jpg" alt="">
-      <img src="images/pic2.jpg" alt="">
-      <img src="images/pic3.jpg" alt="">
-      <img src="images/pic4.jpg" alt="">
-      <img src="images/pic5.jpg" alt="">
+      <img src="images/pic1.jpg" alt="Event 1">
+      <img src="images/pic2.jpg" alt="Event 2">
+      <img src="images/pic3.jpg" alt="Event 3">
+      <img src="images/pic4.jpg" alt="Event 4">
+      <img src="images/pic5.jpg" alt="Event 5">
     </div>
   </section>
 
-
-
   <!-- ⏳ Countdown to Event -->
   <section class="countdown fade-in" id="countdown">
-    <h2>Countdown to Our Next Encounter</h2>
+    <h2 class="brown-text">Countdown to Our Next Encounter</h2>
     <p>Our next major gathering is around the corner! Prepare to be refreshed, revived, and renewed. Whether you’re new to the ministry or have been walking with us for years, this is a moment you don’t want to miss.</p>
     <div class="timer">
       <div><span id="days">00</span><small>Days</small></div>
@@ -73,33 +72,33 @@
     </div>
   </section>
 
- <!-- 🎞️ Sliding Image Strip -->
- <section class="image-strip fade-in">
+  <!-- 🎞️ Sliding Image Strip -->
+  <section class="image-strip fade-in">
     <div class="strip-track">
-      <img src="images/pic1.jpg" alt="">
-      <img src="images/pic2.jpg" alt="">
-      <img src="images/pic3.jpg" alt="">
-      <img src="images/pic4.jpg" alt="">
-      <img src="images/pic5.jpg" alt="">
+      <img src="images/pic1.jpg" alt="Slide 1">
+      <img src="images/pic2.jpg" alt="Slide 2">
+      <img src="images/pic3.jpg" alt="Slide 3">
+      <img src="images/pic4.jpg" alt="Slide 4">
+      <img src="images/pic5.jpg" alt="Slide 5">
     </div>
   </section>
 
-
-  <!-- 📩 Reminder Form -->
-
-
+  <!-- 📩 Contact Form -->
   <section class="reminder fade-in" id="contact">
-    <h2>Contact Us</h1>
+    <h2 class="brown-text">Contact Us</h2>
     <p>Send us a message and we’ll get back to you soon.</p>
-    
+
     <form action="https://formspree.io/f/xldnyrrw" method="POST">
       <input type="text" name="name" placeholder="Your Name" required />
       <input type="email" name="email" placeholder="Your Email" required />
       <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send</button>
     </form>
-  </section>
 
+    <p style="margin-top: 1rem;">
+      Want to be part of something bigger? <a href="https://bit.ly/4lcYmbD" class="join-link" target="_blank">Click here to register with us</a>
+    </p>
+  </section>
 
   <!-- 🔗 Footer -->
   <footer class="footer">
@@ -107,8 +106,7 @@
       <a href="https://www.instagram.com/godvesselsinternational" target="_blank">Instagram</a>
       <a href="https://www.threads.net/@godvesselsinternational" target="_blank">Threads</a>
       <a href="https://www.facebook.com/profile.php?id=61552993965900" target="_blank">Facebook</a>
-      <a href="mailto:godsvessels86@gmail.com">Email</a>
-      <a href="https://bit.ly/GodVessels2024" target="_blank">Register</a>
+     <!-- <a href="mailto:godsvessels86@gmail.com">Email</a> -->
     </div>
     <p>&copy; 2025 God's Vessels International. Raising a Generation of Fire.</p>
   </footer>
