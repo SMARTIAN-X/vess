@@ -259,7 +259,7 @@
     background: #eef5ff;
     padding: 1rem;
     border-radius: 12px;
-    box-shadow: 0 0 10px #5c3a1a;;
+    box-shadow: 0 0 100px #5c3a1a;
     min-width: 90px;
   }
   .timer span {
@@ -273,7 +273,7 @@
   .image-strip {
     overflow: hidden;
     width: 100%;
-    background: #f4f7ff;
+    background: #ffffff, #f0f7ff;
   }
   
   .strip-track {
