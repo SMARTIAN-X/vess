@@ -1,0 +1,313 @@
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #ffffff, #f0f7ff);
+    color: #222;
+    overflow-x: hidden;
+    line-height: 1.7;
+    padding-top: 90px;
+    text-align: center;
+  }
+  
+  /* HEADER */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #fff;
+    padding: 1.2rem 2rem;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+  }
+  .logo {
+    font-weight: bold;
+    font-size: 1.6rem;
+    color: #7f00ff;
+  }
+  .menu-btn {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: #7f00ff;
+    cursor: pointer;
+  }
+  
+  /* NAV */
+  .nav {
+    display: none;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    margin-top: 1rem;
+  }
+  .nav.open {
+    max-height: 400px;
+  }
+  .nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: rgba(127, 0, 255, 0.08);
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+  }
+  .nav a:hover {
+    background: #7f00ff;
+    color: white;
+  }
+  
+  /* HERO */
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+  .glow-text {
+    font-size: 2.5rem;
+    color: #7f00ff;
+    text-shadow: 0 0 8px #b47bff, 0 0 16px #fff;
+    animation: glow 3s infinite alternate;
+  }
+  @keyframes glow {
+    0% { text-shadow: 0 0 5px #7f00ff; }
+    100% { text-shadow: 0 0 20px #b47bff; }
+  }
+  .hero p {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    max-width: 700px;
+    margin-inline: auto;
+  }
+  
+  /* SECTIONS */
+  section {
+    padding: 2.5rem 1rem;
+    max-width: 1100px;
+    margin: auto;
+  }
+  section h2 {
+    font-size: 1.8rem;
+    color: #5c00b8;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 4px #bb86fc;
+  }
+  
+  /* VERSE */
+  .verse-section {
+    background: #fafaff;
+    border-left: 5px solid #00c3ff;
+    border-right: 5px solid #ff00c8;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.03);
+  }
+  .verse-section p {
+    font-style: italic;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+    color: #444;
+  }
+  
+  /* ABOUT */
+  .about {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.03);
+  }
+  
+  /* GALLERY */
+  .gallery .grid {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    margin-top: 1rem;
+  }
+  .grid img {
+    width: 100%;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(127, 0, 255, 0.1);
+    transition: transform 0.3s;
+  }
+  .grid img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* COUNTDOWN */
+  .countdown .timer {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .timer div {
+    background: #eef5ff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #7f00ff33;
+    min-width: 90px;
+  }
+  .timer span {
+    font-size: 2rem;
+    color: #7f00ff;
+    font-weight: bold;
+  }
+  
+  /* IMAGE STRIP */
+  .image-strip {
+    overflow-x: hidden;
+    background: #f4f7ff;
+  }
+  .strip-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+    gap: 1rem;
+  }
+  .strip-track img {
+    width: 280px;
+    border-radius: 12px;
+  }
+  @keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  
+  /* CONTACT FORM */
+  .reminder form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  .reminder input,
+  .reminder textarea {
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .reminder textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  .reminder button {
+    background: linear-gradient(135deg, #0099ff, #7f00ff);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  .reminder button:hover {
+    background: linear-gradient(135deg, #00ccff, #d500f9);
+    transform: scale(1.05);
+  }
+  
+  /* FOOTER */
+  .footer {
+    background: #f4f6ff;
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid #ccc;
+  }
+  .footer .socials a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #7f00ff;
+    font-weight: bold;
+  }
+  .footer .socials a:hover {
+    color: #00c3ff;
+    text-shadow: 0 0 5px #b47bff;
+  }
+  
+  /* ANIMATIONS */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .glow-text {
+      font-size: 2rem;
+    }
+  
+    .nav {
+      display: flex;
+    }
+  
+    .grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .timer {
+      flex-direction: row;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+  
+    .timer div {
+      padding: 0.6rem;
+      min-width: 70px;
+    }
+  
+    .timer span {
+      font-size: 1.4rem;
+    }
+  
+    section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .verse-section p,
+    .hero p,
+    .about p {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+  
+    .strip-track img {
+      width: 80vw;
+    }
+  }
+  
+  /* DESKTOP BOOST */
+  @media (min-width: 1024px) {
+    body {
+      font-size: 1.2rem;
+    }
+  
+    h1.glow-text {
+      font-size: 3rem;
+    }
+  
+    h2 {
+      font-size: 2.2rem;
+    }
+  
+    section p {
+      font-size: 1.3rem;
+    }
+  }
+  
