@@ -336,6 +336,35 @@
   .join-link:hover {
     color: #7f00ff;
   }
+
+
+  .form-message {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: green;
+    text-align: center;
+  }
+  
+  .form-message.show {
+    display: block;
+    opacity: 1;
+  }
+  .status-message {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    color: lime;
+    margin-top: 10px;
+    pointer-events: none;
+  }
+  
+  .status-message.show {
+    opacity: 1;
+  }
+  
+  
   
   /* FOOTER */
   .footer {

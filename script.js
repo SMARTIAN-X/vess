@@ -59,22 +59,40 @@ function toggleMenu() {
   rotateVerse(); // Show immediately
   
   // ✅ EMAIL VALIDATION
+
+  // Contact Form Submission 
   const form = document.querySelector("form");
-  form.addEventListener("submit", function (e) {
-    const email = form.querySelector('input[name="email"]').value.trim();
-    const message = form.querySelector('textarea[name="message"]').value.trim();
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-  
-    if (!emailPattern.test(email)) {
-      alert("Please enter a valid email address.");
-      e.preventDefault();
-      return;
-    }
-  
-    if (message.length < 5) {
-      alert("Please enter a message with at least 5 characters.");
-      e.preventDefault();
-      return;
+  const status = document.getElementById("form-status");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const formData = new FormData(form);
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        status.innerHTML = "✅ Message sent successfully!";
+        form.reset();
+        status.classList.add("show");
+
+        setTimeout(() => {
+          status.classList.remove("show");
+        }, 4000);
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          status.innerHTML = "❌ " + data.errors.map(err => err.message).join(", ");
+        } else {
+          status.innerHTML = "❌ Something went wrong. Please try again.";
+        }
+      }
+    } catch (error) {
+      status.innerHTML = "❌ Error: " + error.message;
     }
   });
-  
